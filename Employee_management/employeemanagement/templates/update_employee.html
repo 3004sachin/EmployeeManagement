@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee-table</title>
+</head>
+<body>
+    <form method="post">
+      {% csrf_token %}
+
+      <h3>Employee Update Table</h3>
+        <label for="name">Employee Name</label>
+        <input type="text" name="employeename" placeholder="enter employee name" value="{{data.employee_name}}"><br><br>
+
+        <label for="profile">Employee Profile</label>
+        <input type="text" name="employeeprofile" placeholder="enter employee profile" value="{{data.employee_profile}}"><br><br>
+
+        <label for="department">Department</label>
+          <input type="radio" name="department" value="IT"{% if IT %}checked{% endif %}> IT</option>
+          <input type="radio" name="department" value="Medical"{% if Medical%}checked{% endif %}>Medical</option>
+          <input type="radio" name="department" value="Business"{% if Business %}checked{% endif %} >Business</option>
+        <br><br>
+
+        <label for="salary">Salary</label>
+        <input type="text" name="salary" placeholder="enter salary..." value="{{data.salary}}"><br><br>
+
+        <label for="bonus">Bonus</label>
+        <input type="text" name="bonus" placeholder="bonus..." value="{{data.bonus}}"><br><br>
+
+        <label for="Location">Location</label>
+        <input type="text" name="location" placeholder="location..." value="{{data.location}}"><br><br>
+
+        
+        <label for="role">Role</label>
+      <input type="text" name="role" placeholder="role.." value="{{data.role}}"><br><br>
+
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" placeholder="phone number..." value="{{data.phone}}"><br><br>
+
+        <button>submit</button>
+    </form>
+    
+</body>
+</html>

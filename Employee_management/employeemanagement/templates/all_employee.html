@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-EMPLOYEE</title>
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+<body>
+   <center> <h2>Employee All Data</h2> </center>
+    <table style="width:100%">
+        <tr>
+          <th>Employee Name</th>
+          <th>Employee Profile</th>
+          <th>Department</th>
+          <th>Location</th>
+          <th>Salary</th>
+          <th>Bonus</th>
+          <th>Role</th>
+          <th>Phone Number</th>
+            <th>Action</th>
+        </tr>
+        {% for datas in data %}
+        <tr>
+          <td><b>{{datas.employee_name}}</b></td>
+          <td>{{datas.employee_profile}}</td>
+          <td>{{datas.department}}</td>
+          <td>{{datas.location}}</td>
+          <td>{{datas.salary}}</td>
+          <td>{{datas.bonus}}</td>
+          <td>{{datas.role}}</td>
+          <td>{{datas.phone}}</td>
+          <td><a href="/remove/{{datas.id}}">delete</a>
+            <a href="/edit/{{datas.id}}">Update</a>
+        </td>
+        </tr>
+        {% endfor %}
+
+      </table>
+</body>
+</html>
